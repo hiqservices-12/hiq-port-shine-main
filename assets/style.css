@@ -1,0 +1,87 @@
+/* Global custom stylesheet for HiQ Services */
+:root {
+  /* HiQ Steel & White palette */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.04 245);          /* #1C2B3A */
+  --card: oklch(0.985 0.005 240);
+  --card-foreground: oklch(0.22 0.04 245);
+  --primary: oklch(0.55 0.11 245);             /* #2E6DA4 steel blue */
+  --primary-foreground: oklch(1 0 0);
+  --navy: oklch(0.32 0.08 250);                /* #1A3F63 dark nav */
+  --navy-foreground: oklch(1 0 0);
+  --accent: oklch(0.66 0.10 240);              /* #5B9BD5 */
+  --accent-foreground: oklch(1 0 0);
+  --secondary: oklch(0.92 0.025 240);          /* #D6E4F0 light bg */
+  --secondary-foreground: oklch(0.32 0.08 250);
+  --muted: oklch(0.965 0.012 240);
+  --muted-foreground: oklch(0.46 0.04 245);
+  --border: oklch(0.90 0.02 240);
+  --input: oklch(0.90 0.02 240);
+  --ring: oklch(0.55 0.11 245);
+  
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Custom Tailwind Utility classes mapped to native CSS */
+.container-x {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #2E6DA4; /* Fallback primary */
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #2E6DA4; /* Fallback primary */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: gap 0.2s ease;
+}
+
+.link-arrow:hover {
+  gap: 0.75rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
